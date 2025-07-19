@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menadżer Kont - Twoja Firma</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-user-cog"></i> Menadżer Kont</h1>
+            <p>Zarządzaj kontami pracowników i klientów</p>
+        </header>
+
+        <div class="content">
+            <div class="form-container">
+                <h2><i class="fas fa-plus-circle"></i> Dodaj nowe konto</h2>
+                <form id="accountForm">
+                    <div class="form-group">
+                        <label for="name">Nazwa:</label>
+                        <input type="text" id="name" required placeholder="Wprowadź nazwę">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required placeholder="Wprowadź email">
+                    </div>
+                    <div class="form-group">
+                        <label for="robux">Ilość Robux:</label>
+                        <input type="number" id="robux" required placeholder="Wprowadź ilość robuxów">
+                    </div>
+                    <button type="submit" id="submitBtn">Dodaj konto</button>
+                    <button type="button" id="cancelEdit" style="display:none;">Anuluj edycję</button>
+                </form>
+            </div>
+
+            <div class="accounts-container">
+                <div class="accounts-header">
+                    <h2><i class="fas fa-list"></i> Lista kont</h2>
+                    <div class="sort-controls">
+                        <span>Sortuj:</span>
+                        <select id="sortSelect">
+                            <option value="default">Domyślnie</option>
+                            <option value="robux-desc">Robux (malejąco)</option>
+                            <option value="robux-asc">Robux (rosnąco)</option>
+                            <option value="name-asc">Nazwa (A-Z)</option>
+                            <option value="name-desc">Nazwa (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Szukaj kont...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="accounts-list" id="accountsList">
+                    <!-- Konta będą dodawane dynamicznie -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
